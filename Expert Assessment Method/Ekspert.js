@@ -365,21 +365,6 @@ function draw_table(sheet, hint, exp, fac){
         let table = []
         for(let i = 0; i < sheet.children.length; i++){
             if(sheet.children[i].id){
-                if(!Number.isInteger(sheet.children[i].value/1)){
-                    table = []
-                    alert('Invalid value entered: Ex' + (parseInt(sheet.children[i].id.split('_')[0]) + 1) + ' F' + (parseInt(sheet.children[i].id.split('_')[1]) + 1) + ' = ' + sheet.children[i].value)
-                    break
-                }
-                if(parseInt(sheet.children[i].value) > fac || parseInt(sheet.children[i].value) <= 0){
-                    table = []
-                    alert('Invalid value entered: Ex' + (parseInt(sheet.children[i].id.split('_')[0]) + 1) + ' F' + (parseInt(sheet.children[i].id.split('_')[1]) + 1) + ' = ' + sheet.children[i].value)
-                    break
-                }
-                if(!sheet.children[i].value){
-                    table = []
-                    alert('Not all values entered: Ex' + (parseInt(sheet.children[i].id.split('_')[0]) + 1) + ' F' + (parseInt(sheet.children[i].id.split('_')[1]) + 1))
-                    break
-                }
                 if(sheet.children[i].id.split('_')[1] == '0'){
                     table[parseInt(sheet.children[i].id.split('_')[0])] = []
                 }
@@ -429,4 +414,5 @@ function draw_greeting(){
 
 function main(){
     draw_greeting()
+
 }
